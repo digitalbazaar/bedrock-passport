@@ -1,5 +1,9 @@
 # bedrock-passport ChangeLog
 
+### Changed
+- Update to support http-signatures "(request-target)" as well as the older
+  "request-line".
+
 ## 3.4.1 - 2017-09-04
 
 ### Fixed
