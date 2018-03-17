@@ -27,7 +27,7 @@
     "did-io": "^0.6.1",
     "http-signature": "^1.0.2",
     "jsonld": "^0.4.2",
-    "jsonld-signatures": "^1.2.1",
+    "jsonld-signatures": "^2.0.0",
     "lodash": "^4.0.0",
     "passport": "~0.2.1",
     "request": "^2.75.0"
