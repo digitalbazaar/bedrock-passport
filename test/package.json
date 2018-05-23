@@ -28,6 +28,7 @@
     "async": "^2.6.0",
     "axios": "^0.18.0",
     "bedrock": "^1.0.0",
+    "bedrock-account": "^1.0.0",
     "bedrock-did-client": "^1.0.0",
     "bedrock-docs": "^2.0.2",
     "bedrock-express": "^2.0.0",
