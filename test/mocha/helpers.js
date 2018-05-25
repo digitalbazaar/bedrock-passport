@@ -16,7 +16,7 @@ const api = {};
 module.exports = api;
 
 // mutates requestOptions
-api.createHttpSignatureRequest = async(
+api.createHttpSignatureRequest = async (
   {algorithm, identity, requestOptions}) => {
   if(!requestOptions.headers.date) {
     requestOptions.headers.date = jsprim.rfc1123(new Date());
@@ -139,11 +139,12 @@ function insertTestData(mockData, callback) {
   async.forEachOf(mockData.identities, (identity, key, callback) =>
     async.parallel([
       callback => brIdentity.insert(null, identity.identity, callback),
-      callback => brKey.addPublicKey(null, identity.keys.publicKey, callback)
+      callback => brKey.addPublicKey(
+        {actor: null, publicKey: identity.keys.publicKey}, callback)
     ], callback),
   err => {
     if(err) {
-      if(!database.isDuplicateError(err)) {
+      if(err.name === 'DuplicateError') {
         // duplicate error means test data is already loaded
         return callback(err);
       }

@@ -22,7 +22,7 @@ const urlObj = {
 describe('bedrock-passport', () => {
   describe('authenticated requests using http-signature', () => {
     describe('using dereference lookup', () => {
-      it('request succeeds with ed25519 key', async() => {
+      it('request succeeds with ed25519 key', async () => {
         const identity = mockData.identities.zeta;
         const clonedUrlObj = util.clone(urlObj);
         const requestOptions = {
@@ -43,7 +43,7 @@ describe('bedrock-passport', () => {
         should.exist(res.data.identity.id);
         res.data.identity.id.should.equal(identity.identity.id);
       });
-      it('request succeeds with rsa key', async() => {
+      it('request succeeds with rsa key', async () => {
         const identity = mockData.identities.alpha;
         const clonedUrlObj = util.clone(urlObj);
         const requestOptions = {
@@ -62,7 +62,7 @@ describe('bedrock-passport', () => {
 
       // beta signs the request with a private key that does not match the
       // published public key
-      it('dereference lookup fails', async() => {
+      it('dereference lookup fails', async () => {
         const identity = mockData.identities.beta;
         const clonedUrlObj = util.clone(urlObj);
         const requestOptions = {
@@ -87,7 +87,7 @@ describe('bedrock-passport', () => {
       });
 
       // gamma has no published public key document
-      it('should fail if key document URL is unavailable', async() => {
+      it('should fail if key document URL is unavailable', async () => {
         const identity = mockData.identities.gamma;
         const clonedUrlObj = util.clone(urlObj);
         const requestOptions = {
@@ -116,7 +116,7 @@ describe('bedrock-passport', () => {
         should.not.exist(res);
       });
       // delta has no published owner document
-      it('should fail if owner URL is unavailable', async() => {
+      it('should fail if owner URL is unavailable', async () => {
         const identity = mockData.identities.delta;
         const clonedUrlObj = util.clone(urlObj);
         const requestOptions = {
@@ -148,7 +148,7 @@ describe('bedrock-passport', () => {
       });
 
       // epsilon owner doc references alpha owner public key doc
-      it('fails if owner doc references wrong public key', async() => {
+      it('fails if owner doc references wrong public key', async () => {
         const identity = mockData.identities.epsilon;
         const clonedUrlObj = util.clone(urlObj);
         const requestOptions = {
