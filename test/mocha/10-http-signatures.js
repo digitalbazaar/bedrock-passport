@@ -81,7 +81,7 @@ describe('bedrock-passport', () => {
           err.response.data.should.be.an('object');
           const {data} = err.response;
           should.exist(data.type);
-          data.type.should.equal('PermissionDenied');
+          data.type.should.equal('NotAllowedError');
         }
         should.not.exist(res);
       });
@@ -106,7 +106,7 @@ describe('bedrock-passport', () => {
           err.response.data.should.be.an('object');
           const {data} = err.response;
           should.exist(data.type);
-          data.type.should.equal('PermissionDenied');
+          data.type.should.equal('NotAllowedError');
           should.exist(data.cause);
           should.exist(data.cause.type);
           data.cause.type.should.equal('NotFoundError');
@@ -135,7 +135,7 @@ describe('bedrock-passport', () => {
           err.response.data.should.be.an('object');
           const {data} = err.response;
           should.exist(data.type);
-          data.type.should.equal('PermissionDenied');
+          data.type.should.equal('NotAllowedError');
           should.exist(data.cause);
           should.exist(data.cause.type);
           data.cause.type.should.equal('DataError');
@@ -167,7 +167,7 @@ describe('bedrock-passport', () => {
           err.response.data.should.be.an('object');
           const {data} = err.response;
           should.exist(data.type);
-          data.type.should.equal('PermissionDenied');
+          data.type.should.equal('NotAllowedError');
           should.exist(data.cause);
           should.exist(data.cause.type);
           data.cause.type.should.equal('DataError');

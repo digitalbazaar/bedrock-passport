@@ -17,7 +17,7 @@ bedrock.events.on('bedrock-express.configure.routes', app => {
   app.get('/keys/:key', rest.when.prefers.jsonld, rest.linkedDataHandler({
     get: (req, res, callback) => {
       if(!mockData.keys[req.params.key]) {
-        return callback(new BedrockError('Not Found.', 'NotFound', {
+        return callback(new BedrockError('Not Found.', 'NotFoundError', {
           public: true,
           httpStatusCode: 404
         }));
@@ -28,7 +28,7 @@ bedrock.events.on('bedrock-express.configure.routes', app => {
   app.get('/tests/i/:owner', rest.when.prefers.jsonld, rest.linkedDataHandler({
     get: (req, res, callback) => {
       if(!mockData.owners[req.params.owner]) {
-        return callback(new BedrockError('Not Found.', 'NotFound', {
+        return callback(new BedrockError('Not Found.', 'NotFoundError', {
           public: true,
           httpStatusCode: 404
         }));

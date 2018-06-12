@@ -9,14 +9,14 @@ const brIdentity = require('bedrock-identity');
 const config = require('bedrock').config;
 const database = require('bedrock-mongodb');
 const httpSignatureHeader = require('http-signature-header');
-const httpSignatureCrypto = require('http-signature-crypto');
+const signatureAlgorithms = require('signature-algorithms');
 const jsprim = require('jsprim');
 
 const api = {};
 module.exports = api;
 
 // mutates requestOptions
-api.createHttpSignatureRequest = async (
+api.createHttpSignatureRequest = async(
   {algorithm, identity, requestOptions}) => {
   if(!requestOptions.headers.date) {
     requestOptions.headers.date = jsprim.rfc1123(new Date());
@@ -41,7 +41,7 @@ api.createHttpSignatureRequest = async (
     cryptoOptions.privateKeyBase58 = privateKeyBase58;
   }
 
-  authzHeaderOptions.signature = await httpSignatureCrypto.sign(cryptoOptions);
+  authzHeaderOptions.signature = await signatureAlgorithms.sign(cryptoOptions);
   requestOptions.headers.Authorization = httpSignatureHeader.createAuthzHeader(
     authzHeaderOptions);
 };
@@ -50,15 +50,10 @@ api.createIdentity = userName => {
   const newIdentity = {
     id: 'https://' + config.server.host + '/tests/i/' + userName,
     type: 'Identity',
-    sysSlug: userName,
     label: userName,
     email: userName + '@bedrock.dev',
-    sysPassword: 'password',
-    sysPublic: ['label', 'url', 'description'],
-    sysResourceRole: [],
     url: config.server.baseUri,
-    description: userName,
-    sysStatus: 'active'
+    description: userName
   };
   return newIdentity;
 };
@@ -138,7 +133,11 @@ api.removeCollection = (collection, callback) => {
 function insertTestData(mockData, callback) {
   async.forEachOf(mockData.identities, (identity, key, callback) =>
     async.parallel([
-      callback => brIdentity.insert(null, identity.identity, callback),
+      callback => brIdentity.insert({
+        actor: null,
+        identity: identity.identity,
+        meta: identity.meta || {}
+      }, callback),
       callback => brKey.addPublicKey(
         {actor: null, publicKey: identity.keys.publicKey}, callback)
     ], callback),

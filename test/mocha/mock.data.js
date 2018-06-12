@@ -38,10 +38,12 @@ let userName = 'alpha';
 let keyId = '31e76c9d-0cb9-4d0a-9154-584a58fc4bab';
 identities[userName] = {};
 identities[userName].identity = helpers.createIdentity(userName);
-identities[userName].identity.sysResourceRole.push({
-  sysRole: 'credential.user',
-  generateResource: 'id'
-});
+identities[userName].meta = {
+  sysResourceRole: [{
+    sysRole: 'credential.user',
+    generateResource: 'id'
+  }]
+};
 identities[userName].keys = helpers.createKeyPair({
   userName: userName,
   userId: identities[userName].identity.id,
@@ -98,10 +100,12 @@ userName = 'beta';
 keyId = '16918840-a3b8-4619-b16e-1a51a633dc86';
 identities[userName] = {};
 identities[userName].identity = helpers.createIdentity(userName);
-identities[userName].identity.sysResourceRole.push({
-  sysRole: 'credential.user',
-  generateResource: 'id'
-});
+identities[userName].meta = {
+  sysResourceRole: [{
+    sysRole: 'credential.user',
+    generateResource: 'id'
+  }]
+};
 identities[userName].keys = helpers.createKeyPair({
   userName: userName,
   userId: identities[userName].identity.id,
@@ -158,10 +162,12 @@ userName = 'gamma';
 keyId = '6eda57cb-aa0b-441c-8f27-0aeab242ee91';
 identities[userName] = {};
 identities[userName].identity = helpers.createIdentity(userName);
-identities[userName].identity.sysResourceRole.push({
-  sysRole: 'credential.user',
-  generateResource: 'id'
-});
+identities[userName].meta = {
+  sysResourceRole: [{
+    sysRole: 'credential.user',
+    generateResource: 'id'
+  }]
+};
 identities[userName].keys = helpers.createKeyPair({
   userName: userName,
   userId: identities[userName].identity.id,
@@ -213,10 +219,12 @@ userName = 'delta';
 keyId = '9a1ff4d2-010a-4152-9bf1-e8618f1c8e82';
 identities[userName] = {};
 identities[userName].identity = helpers.createIdentity(userName);
-identities[userName].identity.sysResourceRole.push({
-  sysRole: 'credential.user',
-  generateResource: 'id'
-});
+identities[userName].meta = {
+  sysResourceRole: [{
+    sysRole: 'credential.user',
+    generateResource: 'id'
+  }]
+};
 identities[userName].keys = helpers.createKeyPair({
   userName: userName,
   userId: identities[userName].identity.id,
@@ -269,10 +277,12 @@ userName = 'epsilon';
 keyId = '9a1ff4d2-010a-4152-9bf1-e8618f1c8e82';
 identities[userName] = {};
 identities[userName].identity = helpers.createIdentity(userName);
-identities[userName].identity.sysResourceRole.push({
-  sysRole: 'credential.user',
-  generateResource: 'id'
-});
+identities[userName].meta = {
+  sysResourceRole: [{
+    sysRole: 'credential.user',
+    generateResource: 'id'
+  }]
+};
 identities[userName].keys = helpers.createKeyPair({
   userName: userName,
   userId: identities[userName].identity.id,
@@ -330,10 +340,12 @@ userName = 'zeta';
 keyId = 'd6d09ca6-253d-4db9-b0cd-05d535fc631a';
 identities[userName] = {};
 identities[userName].identity = helpers.createIdentity(userName);
-identities[userName].identity.sysResourceRole.push({
-  sysRole: 'credential.user',
-  generateResource: 'id'
-});
+identities[userName].meta = {
+  sysResourceRole: [{
+    sysRole: 'credential.user',
+    generateResource: 'id'
+  }]
+};
 identities[userName].keys = helpers.createKeyPair({
   userName: userName,
   userId: identities[userName].identity.id,
