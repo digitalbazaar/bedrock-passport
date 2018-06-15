@@ -3,20 +3,20 @@
  */
 'use strict';
 
-const async = require('async');
 const brKey = require('bedrock-key');
 const brIdentity = require('bedrock-identity');
 const config = require('bedrock').config;
 const database = require('bedrock-mongodb');
 const httpSignatureHeader = require('http-signature-header');
-const signatureAlgorithms = require('signature-algorithms');
 const jsprim = require('jsprim');
+const signatureAlgorithms = require('signature-algorithms');
+const {promisify} = require('util');
 
 const api = {};
 module.exports = api;
 
 // mutates requestOptions
-api.createHttpSignatureRequest = async(
+api.createHttpSignatureRequest = async (
   {algorithm, identity, requestOptions}) => {
   if(!requestOptions.headers.date) {
     requestOptions.headers.date = jsprim.rfc1123(new Date());
@@ -94,60 +94,43 @@ api.createKeyPair = options => {
   return newKeyPair;
 };
 
-api.prepareDatabase = (mockData, callback) => async.series([
-  callback => api.removeCollections(callback),
-  callback => insertTestData(mockData, callback)
-], callback);
+api.prepareDatabase = async mockData => {
+  await api.removeCollections();
+  await insertTestData(mockData);
+};
 
 api.randomDate = (start, end) => {
   return new Date(
     start.getTime() + Math.random() * (end.getTime() - start.getTime()));
 };
 
-api.removeCollections = callback => {
-  const collectionNames =
-    ['credentialProvider', 'identity', 'publicKey', 'eventLog'];
-  database.openCollections(collectionNames, err => {
-    if(err) {
-      return callback(err);
-    }
-    async.each(collectionNames, (collectionName, callback) =>
-      database.collections[collectionName].remove({}, callback),
-    err => callback(err));
-  });
+api.removeCollections = async (collectionNames = [
+  'credentialProvider', 'account', 'identity', 'publicKey', 'eventLog']) => {
+  await promisify(database.openCollections)(collectionNames);
+  for(const collectionName of collectionNames) {
+    await database.collections[collectionName].remove({});
+  }
 };
 
-api.removeCollection = (collection, callback) => {
-  const collectionNames = [collection];
-  database.openCollections(collectionNames, err => {
-    if(err) {
-      return callback(err);
-    }
-    async.each(collectionNames, (collectionName, callback) =>
-      database.collections[collectionName].remove({}, callback),
-    err => callback(err));
-  });
-};
+api.removeCollection =
+  async collectionName => api.removeCollections([collectionName]);
 
-// Insert identities and public keys used for testing into database
-function insertTestData(mockData, callback) {
-  async.forEachOf(mockData.identities, (identity, key, callback) =>
-    async.parallel([
-      callback => brIdentity.insert({
-        actor: null,
-        identity: identity.identity,
-        meta: identity.meta || {}
-      }, callback),
-      callback => brKey.addPublicKey(
-        {actor: null, publicKey: identity.keys.publicKey}, callback)
-    ], callback),
-  err => {
-    if(err) {
-      if(err.name === 'DuplicateError') {
+async function insertTestData(mockData) {
+  const records = Object.values(mockData.identities);
+  for(const record of records) {
+    try {
+      await Promise.all([
+        brIdentity.insert(
+          {actor: null, identity: record.identity, meta: record.meta || {}}),
+        brKey.addPublicKey(
+          {actor: null, publicKey: record.identity.keys.publicKey})
+      ]);
+    } catch(e) {
+      if(e.name === 'DuplicateError') {
         // duplicate error means test data is already loaded
-        return callback(err);
+        continue;
       }
+      throw e;
     }
-    callback();
-  }, callback);
+  }
 }

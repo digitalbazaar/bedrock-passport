@@ -1,5 +1,18 @@
 # bedrock-passport ChangeLog
 
+### Added
+- Support promises for `authenticate` and `authenticateAll`.
+- Include `strategies` and `identities` in `user` (and therefore `req.user`).
+
+### Changed
+- ***BREAKING*** Use named parameters in public API.
+- ***BREAKING*** `authenticate` no longer create an express middleware, use
+  `createMiddleware` for that.
+- ***BREAKING*** `checkAuthenticate` has been changed to `authenticateAll`.
+
+### Removed
+- ***BREAKING*** `info` is no longer used or returned in authenticate events.
+
 ## 3.4.2 - 2018-02-23
 
 ### Changed
