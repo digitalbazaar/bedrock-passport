@@ -1,5 +1,11 @@
 # bedrock-passport ChangeLog
 
+## 5.0.0 - TBD
+
+### Changed
+- **BREAKING**: Remove HTTPSignature strategy.
+- **BREAKING**: Remove DID strategy.
+
 ## 4.0.4 - 2018-09-18
 
 ### Fixed
@@ -28,13 +34,13 @@
 - Include `strategies` and `identities` in `user` (and therefore `req.user`).
 
 ### Changed
-- ***BREAKING*** Use named parameters in public API.
-- ***BREAKING*** `authenticate` no longer create an express middleware, use
+- **BREAKING** Use named parameters in public API.
+- **BREAKING** `authenticate` no longer create an express middleware, use
   `createMiddleware` for that.
-- ***BREAKING*** `checkAuthenticate` has been changed to `authenticateAll`.
+- **BREAKING** `checkAuthenticate` has been changed to `authenticateAll`.
 
 ### Removed
-- ***BREAKING*** `info` is no longer used or returned in authenticate events.
+- **BREAKING** `info` is no longer used or returned in authenticate events.
 
 ## 3.4.2 - 2018-02-23
 
