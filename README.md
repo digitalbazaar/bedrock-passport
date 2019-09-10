@@ -1,7 +1,5 @@
 # bedrock-passport
 
-[![Build Status](http://ci.digitalbazaar.com/buildStatus/icon?job=bedrock-passport)](http://ci.digitalbazaar.com/job/bedrock-passport)
-
 A [bedrock][] module that adds website or REST API authentication to
 [bedrock][] via [passport][].
 
@@ -37,17 +35,11 @@ There are a number of ways a client may authenticate itself with the REST API.
 These methods include:
 
 - Website session based on user and password and using cookies.
-- [HTTP Signatures][]
 
 ### Cookies
 
 This method of authentication is useful for clients that are under your control
 and who you trust with your password to the service.
-
-### HTTP Signatures
-
-[HTTP Signatures][]-based authentication which is useful for non-interactive
-clients, and clients that you do not want to provide a password for.
 
 ## API
 
@@ -97,4 +89,3 @@ request, otherwise set a 400 error.
 
 [bedrock]: https://github.com/digitalbazaar/bedrock
 [passport]: https://github.com/jaredhanson/passport
-[HTTP Signatures]: https://web-payments.org/specs/source/http-signatures/
