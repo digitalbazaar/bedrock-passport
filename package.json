@@ -26,9 +26,9 @@
   },
   "peerDependencies": {
     "bedrock": "^1.12.1",
-    "bedrock-account": "^1.0.0",
+    "bedrock-account": "^2.0.0",
     "bedrock-express": "^2.0.0",
-    "bedrock-identity": "^5.0.0"
+    "bedrock-identity": "^6.0.0"
   },
   "directories": {
     "lib": "./lib"
