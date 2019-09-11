@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 5.0.0 - TBD
+## 5.0.0 - 2019-09-11
 
 ### Changed
 - **BREAKING**: Remove HTTPSignature strategy.
