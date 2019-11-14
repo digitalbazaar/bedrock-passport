@@ -1,5 +1,7 @@
 # bedrock-passport ChangeLog
 
+## 5.0.1 - 2019-11-13
+
 ### Changed
 - Update dependencies.
 
