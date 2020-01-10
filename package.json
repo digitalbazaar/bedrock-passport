@@ -1,6 +1,6 @@
 {
   "name": "bedrock-passport",
-  "version": "5.0.2-0",
+  "version": "5.0.2",
   "description": "Bedrock passport module",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "lib",
