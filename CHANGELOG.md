@@ -1,5 +1,10 @@
 # bedrock-passport ChangeLog
 
+## 5.0.2 - 2020-01-10
+
+### Fixed
+- Return account ID (not identity ID) in error details.
+
 ## 5.0.1 - 2019-11-13
 
 ### Changed
