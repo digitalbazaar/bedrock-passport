@@ -4,7 +4,9 @@
   "description": "Bedrock passport module",
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "lib",
-  "scripts": {},
+  "scripts": {
+    "lint": "eslint lib test"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/digitalbazaar/bedrock-passport"

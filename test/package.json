@@ -1,0 +1,34 @@
+{
+  "name": "bedrock-passport-test",
+  "version": "0.0.1-0",
+  "private": true,
+  "scripts": {
+    "test": "node --preserve-symlinks test.js test",
+    "coverage": "cross-env NODE_ENV=test nyc --reporter=lcov --reporter=text-summary npm test",
+    "coverage-ci": "cross-env NODE_ENV=test nyc --reporter=text-lcov npm test > coverage.lcov",
+    "coverage-report": "nyc report"
+  },
+  "dependencies": {
+    "bedrock": "^3.0.0",
+    "bedrock-account": "^2.0.0",
+    "bedrock-express": "^3.1.0",
+    "bedrock-identity": "^7.0.0",
+    "bedrock-mongodb": "^6.0.0",
+    "bedrock-passport": "file:..",
+    "bedrock-permission": "^2.5.4",
+    "bedrock-server": "^2.6.0",
+    "bedrock-test": "^5.0.0",
+    "bedrock-validation": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "nyc": "^15.0.1"
+  },
+  "nyc": {
+    "excludeNodeModules": false,
+    "include": [
+      "node_modules/bedrock-passport/**"
+    ],
+    "exclude": [
+      "node_modules/bedrock-passport/node_modules/**"
+    ]
+  }
+}
