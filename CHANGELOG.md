@@ -1,5 +1,11 @@
 # bedrock-passport ChangeLog
 
+## 6.0.0 - 2020-06-29
+
+### Changed
+- **BREAKING**: Remove support for `bedrock-identity` module and
+  `req.user.identity`.
+
 ## 5.0.2 - 2020-01-10
 
 ### Fixed
