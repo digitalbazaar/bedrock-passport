@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 6.1.0 - 2021-01-TBD
+## 6.1.0 - 2021-01-12
 
 ### Changed
 - Update bedrock-account@5.0.
