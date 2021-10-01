@@ -1,5 +1,13 @@
 # bedrock-passport ChangeLog
 
+## 7.0.0 - TBD
+
+### Changed
+- **BREAKING:**: Upgrade to `passport: ^0.5.0`.
+- **BREAKING:**: Upgrade Peer Dependency to `bedrock: ^4.0.0`.
+- **BREAKING:**: Upgrade Peer Dependency to `bedrock-express: ^5.0.0`.
+- **BREAKING:**: Set `engines.node >= 12.0.0`.
+
 ## 6.1.0 - 2021-01-12
 
 ### Changed
