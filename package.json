@@ -29,7 +29,7 @@
   },
   "peerDependencies": {
     "bedrock": "^4.0.0",
-    "bedrock-account": "2.x - 5.x",
+    "bedrock-account": "^5.0.0",
     "bedrock-express": "^5.0.0"
   },
   "directories": {
