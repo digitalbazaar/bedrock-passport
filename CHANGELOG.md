@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 7.0.0 - TBD
+## 7.0.0 - 2021-10-08
 
 ### Changed
 - **BREAKING:**: Upgrade to `passport: ^0.5.0`.
