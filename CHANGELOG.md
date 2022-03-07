@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 8.0.1 - 2022-03-xx
+## 8.0.1 - 2022-03-07
 
 ### Fixed
 - Ensure errors are thrown when account status is not `active` on session load.
