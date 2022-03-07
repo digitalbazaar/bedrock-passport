@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 8.0.0 - 2022-03-xx
+## 8.0.0 - 2022-03-07
 
 ### Changed
 - **BREAKING**: Use `bedrock-account@6` which removes `bedrock-permission`
