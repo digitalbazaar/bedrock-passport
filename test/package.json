@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "bedrock": "^4.4.3",
-    "bedrock-account": "digitalbazaar/bedrock-account#remove-br-permission",
+    "bedrock-account": "^6.0.0",
     "bedrock-express": "^6.2.2",
     "bedrock-mongodb": "^8.4.0",
     "bedrock-passport": "file:..",
