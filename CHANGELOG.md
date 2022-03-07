@@ -1,5 +1,16 @@
 # bedrock-passport ChangeLog
 
+## 8.0.0 - 2022-03-xx
+
+### Changed
+- **BREAKING**: Use `bedrock-account@6` which removes `bedrock-permission`
+  including concepts such as `actor`.
+- **BREAKING**: Remove deprecated callbackified functions.
+- **BREAKING**: Updated peer dependencies, use:
+  - `bedrock-account@6`
+  - `bedrock@4.4`
+  - `bedrock-express@6.2`
+
 ## 7.0.0 - 2021-10-08
 
 ### Changed
