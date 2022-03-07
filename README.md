@@ -20,7 +20,7 @@ app.server.post('/resources/:resourceId',
   brPassport.ensureAuthenticated,
   (req, res, next) => {
     // resourceId available with req.params.resourceId
-    // user identity available with req.user.identity
+    // user account available with req.user.account
     res.sendStatus(204);
   });
 ```
@@ -43,7 +43,7 @@ and who you trust with your password to the service.
 
 ## API
 
-### authenticate({strategy, req, res, options = {}}, callback(err, {user}))
+### authenticate({strategy, req, res, options = {}})
 
 Attempt to authenticate a user using the specified strategy. If authentication
 is successful, a `bedrock-passport.authenticate` event is emitted with an
@@ -57,19 +57,14 @@ object with this format:
 }
 ```
 
-Once all event handlers have run, `callback` is called (or the returned
-Promise resolves for Promise users).
+Once all event handlers have run, a promise resolves with `{user}` data.
 
-### authenticateAll({req, res, options = {}}, callback(err, {user}))
+### authenticateAll({req, res, options = {}})
 
 Attempt to authenticate a user using all configured strategies. For every
 authentication method, `authenticate` will be called. If more than
 one authentication method is configured to run automatically, all of the
-associated accounts must match. Any identities detected may be different and
-will be given in `user.identities`. The `actor` (all combined capabilities
-detected from all authenticated identities) is available on `user.actor`. This
-function also returns a Promise so `callback` is not necessary when using
-promises.
+associated accounts must match.
 
 ### createMiddleware({strategy, options})
 
@@ -79,7 +74,7 @@ Creates express middleware that calls `authenticate` using the given strategy.
 
 Express middleware that processes a request has been optionally authenticated
 via `authenticateAll`. Code using this call can check if the request is
-authenticated by testing if `req.user` and `req.user.actor` are set.
+authenticated by testing if `req.user` and `req.user.account` are set.
 
 ### ensureAuthenticated(req, res, next)
 
