@@ -28,9 +28,9 @@
     "passport": "^0.5.0"
   },
   "peerDependencies": {
-    "bedrock": "^4.0.0",
+    "bedrock": "^4.4.3",
     "bedrock-account": "^5.0.0",
-    "bedrock-express": "^5.0.0"
+    "bedrock-express": "^6.2.2"
   },
   "directories": {
     "lib": "./lib"
