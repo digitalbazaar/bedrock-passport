@@ -1,5 +1,10 @@
 # bedrock-passport ChangeLog
 
+## 8.0.2 - 2022-03-xx
+
+### Fixed
+- Surface not found / not allowed errors when loading session account.
+
 ## 8.0.1 - 2022-03-07
 
 ### Fixed
