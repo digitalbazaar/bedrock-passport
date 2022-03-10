@@ -1,5 +1,10 @@
 # bedrock-passport ChangeLog
 
+## 8.0.3 - 2022-03-xx
+
+### Fixed
+- Allow old sessions (prior to serialized user data format change) to be loaded.
+
 ## 8.0.2 - 2022-03-07
 
 ### Fixed
