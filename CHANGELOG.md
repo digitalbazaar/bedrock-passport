@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 8.1.0 - 2022-03-xx
+## 8.1.0 - 2022-03-25
 
 ### Changed
 - Update peer deps:
