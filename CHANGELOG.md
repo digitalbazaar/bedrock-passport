@@ -1,5 +1,15 @@
 # bedrock-passport ChangeLog
 
+## 8.1.0 - 2022-03-xx
+
+### Changed
+- Update peer deps:
+  - `bedrock@4.5`
+  - `bedrock-account@6.3`
+  - `bedrock-express@6.4`.
+- Update internals to use esm style and use `esm.js` to
+  transpile to CommonJS.
+
 ## 8.0.3 - 2022-03-09
 
 ### Fixed
