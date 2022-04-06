@@ -1,9 +1,10 @@
 {
-  "name": "bedrock-passport",
+  "name": "@bedrock/passport",
   "version": "8.1.1-0",
+  "type": "module",
   "description": "Bedrock passport module",
   "license": "SEE LICENSE IN LICENSE.md",
-  "main": "lib",
+  "main": "./lib/index.js",
   "scripts": {
     "lint": "eslint ."
   },
@@ -25,24 +26,23 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-passport",
   "dependencies": {
-    "esm": "^3.2.25",
     "passport": "^0.5.0"
   },
   "peerDependencies": {
-    "bedrock": "^4.5.0",
-    "bedrock-account": "^6.3.2",
-    "bedrock-express": "^6.4.1"
+    "@bedrock/core": "^5.0.0",
+    "@bedrock/account": "^7.0.0",
+    "@bedrock/express": "^7.0.0"
   },
   "directories": {
     "lib": "./lib"
   },
   "engines": {
-    "node": ">=12.0.0"
+    "node": ">=14"
   },
   "devDependencies": {
-    "eslint": "^7.3.1",
+    "eslint": "^7.32.0",
     "eslint-config-digitalbazaar": "^2.8.0",
     "eslint-plugin-jsdoc": "^37.9.7",
-    "jsdoc-to-markdown": "^6.0.1"
+    "jsdoc-to-markdown": "^7.1.1"
   }
 }
