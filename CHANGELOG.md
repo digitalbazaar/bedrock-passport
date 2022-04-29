@@ -1,5 +1,13 @@
 # bedrock-passport ChangeLog
 
+## 10.0.0 - 2022-04-xx
+
+### Changed
+- **BREAKING**: Update peer deps:
+  - `@bedrock/core@6`
+  - `@bedrock/account@8`
+  - `@bedrock/express@8`.
+
 ## 9.0.0 - 2022-04-06
 
 ### Changed
