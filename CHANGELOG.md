@@ -1,5 +1,10 @@
 # bedrock-passport ChangeLog
 
+## 10.1.0 - 2022-08-xx
+
+### Changed
+- Use `passport@0.6.0`. This change is not expected to be breaking.
+
 ## 10.0.0 - 2022-04-29
 
 ### Changed
