@@ -26,11 +26,11 @@
   },
   "homepage": "https://github.com/digitalbazaar/bedrock-passport",
   "dependencies": {
-    "passport": "^0.5.0"
+    "passport": "^0.6.0"
   },
   "peerDependencies": {
-    "@bedrock/core": "^6.0.0",
     "@bedrock/account": "^8.0.0",
+    "@bedrock/core": "^6.0.0",
     "@bedrock/express": "^8.0.0"
   },
   "directories": {
