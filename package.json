@@ -29,7 +29,7 @@
     "passport": "^0.6.0"
   },
   "peerDependencies": {
-    "@bedrock/account": "^8.0.0",
+    "@bedrock/account": "^9.0.0",
     "@bedrock/core": "^6.0.0",
     "@bedrock/express": "^8.0.0"
   },
