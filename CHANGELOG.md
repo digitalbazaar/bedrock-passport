@@ -1,5 +1,11 @@
 # bedrock-passport ChangeLog
 
+## 11.0.0 -
+
+### Changed
+- **BREAKING**: Use `@bedrock/account@9` with `@bedrock/mongodb@11`.
+- See Changelog in libraries for further information.
+
 ## 10.1.0 - 2022-08-13
 
 ### Changed
