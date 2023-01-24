@@ -40,9 +40,9 @@
     "node": ">=14"
   },
   "devDependencies": {
-    "eslint": "^7.32.0",
-    "eslint-config-digitalbazaar": "^2.8.0",
-    "eslint-plugin-jsdoc": "^37.9.7",
-    "jsdoc-to-markdown": "^7.1.1"
+    "eslint": "^8.32.0",
+    "eslint-config-digitalbazaar": "^4.2.0",
+    "eslint-plugin-jsdoc": "^39.6.8",
+    "jsdoc-to-markdown": "^8.0.0"
   }
 }
