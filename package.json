@@ -1,6 +1,6 @@
 {
   "name": "@bedrock/passport",
-  "version": "11.0.0",
+  "version": "11.0.1-0",
   "type": "module",
   "description": "Bedrock passport module",
   "license": "SEE LICENSE IN LICENSE.md",
