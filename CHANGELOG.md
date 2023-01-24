@@ -1,5 +1,13 @@
 # bedrock-passport ChangeLog
 
+## 11.0.0 - 2023-01-dd
+
+### Changed
+- **BREAKING**: Update peer deps:
+  - `@bedrock/account@9`.
+  - This changes include database layout and record format changes that are
+    incompatible with previous releases.
+
 ## 10.1.0 - 2022-08-13
 
 ### Changed

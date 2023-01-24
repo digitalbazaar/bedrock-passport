@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@bedrock/core": "^6.0.0",
-    "@bedrock/account": "^8.0.0",
+    "@bedrock/account": "^9.0.0",
     "@bedrock/express": "^8.0.0",
     "@bedrock/mongodb": "^10.0.0",
     "@bedrock/passport": "file:..",
