@@ -1,5 +1,10 @@
 # bedrock-passport ChangeLog
 
+## 11.0.1 - 20xx-xx-xx
+
+### Changed
+- Add module linting.
+
 ## 11.0.0 - 2023-01-24
 
 ### Changed
