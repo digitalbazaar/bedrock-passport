@@ -1,9 +1,16 @@
 # bedrock-passport ChangeLog
 
-## 11.0.1 - 20xx-xx-xx
+## 12.0.0 - 2025-03-xx
 
 ### Changed
 - Add module linting.
+- Update peer dependencies.
+  - **BREAKING**: `@bedrock/account@10`.
+    - Updated for `@bedrock/mongodb@11`.
+  - `@bedrock/core@6.3.0`.
+  - `@bedrock/express@8.3.1`.
+- Update dev dependencies.
+- Update test dependencies.
 
 ## 11.0.0 - 2023-01-24
 
