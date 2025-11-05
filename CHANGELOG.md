@@ -1,5 +1,16 @@
 # bedrock-passport ChangeLog
 
+## 12.1.0 - 2025-mm-dd
+
+### Changed
+- Modernize when session-based authentication is permitted. Modern browser
+  rules are better documented and updated in the code for processing
+  cross-origin requests. Existing cross-origin requests that were allow
+  listed should continue to function as before, but additional requests
+  that were needlessly blocked that are only made possible in modern
+  browsers via specific allow listing (e.g., CORS headers + `SameSite`
+  cookie settings, etc.) are now possible.
+
 ## 12.0.0 - 2025-03-07
 
 ### Changed
