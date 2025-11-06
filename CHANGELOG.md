@@ -1,6 +1,6 @@
 # bedrock-passport ChangeLog
 
-## 12.1.0 - 2025-mm-dd
+## 12.1.0 - 2025-11-05
 
 ### Changed
 - Modernize when session-based authentication is permitted. Modern browser
